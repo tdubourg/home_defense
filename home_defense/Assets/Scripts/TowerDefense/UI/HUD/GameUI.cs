@@ -448,9 +448,11 @@ namespace TowerDefense.UI.HUD
 		/// Throws exception when selecting tower when <see cref="State" /> does not equal <see cref="State.Normal" />
 		/// or <see cref="currentSelectedTower" /> is null
 		/// </exception>
-		public void UpgradeSelectedTower()
+		public void UpgradeSelectedTower(TowerUI towerUI)
 		{
-			if (state != State.Normal)
+            this.towerUI = towerUI;
+
+            if (state != State.Normal)
 			{
 				throw new InvalidOperationException("Trying to upgrade whilst not in Normal state");
 			}
@@ -479,9 +481,11 @@ namespace TowerDefense.UI.HUD
 		/// Throws exception when selecting tower when <see cref="State" /> does not equal <see cref="State.Normal" />
 		/// or <see cref="currentSelectedTower" /> is null
 		/// </exception>
-		public void SellSelectedTower()
+		public void SellSelectedTower(TowerUI towerUI)
 		{
-			if (state != State.Normal)
+            this.towerUI = towerUI;
+
+            if (state != State.Normal)
 			{
 				throw new InvalidOperationException("Trying to sell tower whilst not in Normal state");
 			}

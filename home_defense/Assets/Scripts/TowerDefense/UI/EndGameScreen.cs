@@ -106,7 +106,8 @@ namespace TowerDefense.UI
 		/// </summary>
 		public void GoToNextLevel()
 		{
-			SafelyUnsubscribe();
+            return;
+			/*SafelyUnsubscribe();
 			if (!GameManager.instanceExists)
 			{
 				return;
@@ -129,7 +130,7 @@ namespace TowerDefense.UI
 				return;
 			}
 			LevelItem nextLevel = gm.levelList[index];
-			SceneManager.LoadScene(nextLevel.sceneName);
+			SceneManager.LoadScene(nextLevel.sceneName);*/
 		}
 
 		/// <summary>

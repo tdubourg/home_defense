@@ -17,4 +17,4 @@ MonoBehaviour:
   sell: 2
   maxHealth: 100
   startingHealth: 100
-  icon: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 21300000, guid: 0b4484afb86084084bc9c043c05e1afe, type: 3}
