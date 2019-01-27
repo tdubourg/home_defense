@@ -16,13 +16,14 @@ public class TestDisableMeshNavForJump : MonoBehaviour {
 		
 	}
 
-    void performJump()
+    private void performJump()
     {
         navAgent.isStopped = true;
         var rigidbody = GetComponent<Rigidbody>();
         rigidbody.isKinematic = false;
         rigidbody.useGravity = true;
         rigidbody.AddForce(new Vector3(0, 5, 0), ForceMode.Impulse);
+//        yield return new WaitForSeconds(JUMP_DURATION * (1f - JUMP_HIT_TEST_PLAYER_FACTOR));
 
     }
 

@@ -88,16 +88,54 @@ namespace TowerDefense.Agents
 		{
 			get { return m_NavMeshAgent.velocity; }
 		}
-		
-		/// <summary>
-		/// The current state of the agent along the path
-		/// </summary>
-		public State state { get; protected set; }
 
-		/// <summary>
-		/// Accessor to <see cref="m_NavMeshAgent"/>
-		/// </summary>
-		public NavMeshAgent navMeshNavMeshAgent
+        /// <summary>
+        /// The current state of the agent along the path
+        /// </summary>
+        State m_state;
+		public State state { get { return m_state; } protected set {
+                Debug.Log("Setting state to " + value.ToString());
+                if (value != State.Attacking && value != State.PathComplete)
+                {
+                    // all remaining states are moving states, tell the animator we're moving
+                    if (getAnimator() != null)
+                    {
+                        Debug.Log("Animator present, attempting to tell it we are moving");
+
+                        getAnimator().SetBool("IsMoving", true);
+                    }
+
+                }
+                else
+                {
+                    if (m_animator != null)
+                    {
+                        m_animator.SetBool("IsMoving", true);
+                    }
+
+                }
+                m_state = value;
+            }
+        }
+
+
+
+        protected Animator m_animator;
+        protected Animator getAnimator()
+        {
+            if (this.m_animator == null)
+            {
+                this.m_animator = GetComponentInChildren<Animator>();
+
+            }
+            return this.m_animator;
+
+        }
+
+        /// <summary>
+        /// Accessor to <see cref="m_NavMeshAgent"/>
+        /// </summary>
+        public NavMeshAgent navMeshNavMeshAgent
 		{
 			get { return m_NavMeshAgent; }
 			set { m_NavMeshAgent = value; }
