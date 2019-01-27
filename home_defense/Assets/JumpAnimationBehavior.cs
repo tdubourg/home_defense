@@ -64,12 +64,12 @@ public class JumpAnimationBehavior : StateMachineBehaviour {
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Debug.Log("Entering jumping frog animation state");
+        //Debug.Log("Entering jumping frog animation state");
            // rigidbody = frog.GetComponentInParent<Rigidbody>();
          //   originalSpeed = getNavMeshAgent().speed;
 
         animationStartTime = Time.time;
-        Debug.Log("Setting speed to zero at the beginning of the frog jump");
+        //Debug.Log("Setting speed to zero at the beginning of the frog jump");
         //navMeshAgent.speed = 0;
         dontMove();
     }
@@ -96,7 +96,7 @@ public class JumpAnimationBehavior : StateMachineBehaviour {
 
 	// OnStateExit is called when a transition ends and the state machine finishes evaluating this state
 	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        Debug.Log("Exiting jump frog animation state");
+        //Debug.Log("Exiting jump frog animation state");
         dontMove();
 	}
 

@@ -46,7 +46,7 @@ GameObject:
   m_Layer: 10
   m_Name: WallTower
   m_TagString: Untagged
-  m_Icon: {fileID: -4087464717476244675, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -499,7 +499,6 @@ MonoBehaviour:
   targetTransform: {fileID: 0}
   levels:
   - {fileID: 114824680638543506, guid: 5d48ae870a90f4acd8432780ed7fc26b, type: 2}
-  - {fileID: 114997298725627662, guid: 07ce70e15db244a3297dcf7ee5f02d2d, type: 2}
   towerName: Wall Tower
   dimensions:
     x: 1

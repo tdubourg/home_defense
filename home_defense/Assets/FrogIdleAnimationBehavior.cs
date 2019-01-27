@@ -34,7 +34,7 @@ public class FrogIdleAnimationBehavior : StateMachineBehaviour {
         rigidbody = frog.GetComponentInParent<Rigidbody>();
         originalSpeed = navMeshAgent.speed;
 
-        Debug.Log("Entering Idle frog animation state, setting speed to 0");
+        //Debug.Log("Entering Idle frog animation state, setting speed to 0");
         //navMeshAgent.speed = 0;
         dontMove();
 	}
@@ -43,14 +43,14 @@ public class FrogIdleAnimationBehavior : StateMachineBehaviour {
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         // Debug.Log("Speed of meshAgent on idle animation update:" + navMeshAgent.speed.ToString());
         // navMeshAgent.speed = 0;
-        Debug.Log("idle frog animation update");
+        //Debug.Log("idle frog animation update");
         dontMove();
 
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        Debug.Log("Exiting idle frog animation state");
+        //Debug.Log("Exiting idle frog animation state");
 	}
 
 	// OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here
