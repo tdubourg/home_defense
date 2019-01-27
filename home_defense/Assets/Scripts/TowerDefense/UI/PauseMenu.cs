@@ -110,7 +110,7 @@ namespace TowerDefense.UI
 			bool open = m_State == State.Open;
 			restartButton.interactable = !open;
 			topPanel.color = open ? topPanelDisabledColor : Color.white;
-			levelSelectConfirmButton.gameObject.SetActive(open);
+			//levelSelectConfirmButton.gameObject.SetActive(open);
 			m_State = open ? State.LevelSelectPressed : State.Open;
 		}
 
@@ -120,7 +120,7 @@ namespace TowerDefense.UI
 		public void RestartPressed()
 		{
 			bool open = m_State == State.Open;
-			levelSelectButton.interactable = !open;
+			//levelSelectButton.interactable = !open;
 			topPanel.color = open ? topPanelDisabledColor : Color.white;
 			restartConfirmButton.gameObject.SetActive(open);
 			m_State = open ? State.RestartPressed : State.Open;
@@ -133,9 +133,9 @@ namespace TowerDefense.UI
 		{
 			SetPauseMenuCanvas(false);
 
-			levelSelectConfirmButton.gameObject.SetActive(false);
+			//levelSelectConfirmButton.gameObject.SetActive(false);
 			restartConfirmButton.gameObject.SetActive(false);
-			levelSelectButton.interactable = true;
+			//levelSelectButton.interactable = true;
 			restartButton.interactable = true;
 			topPanel.color = Color.white;
 
