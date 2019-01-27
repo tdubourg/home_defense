@@ -275,16 +275,7 @@ namespace TowerDefense.Towers
 		protected virtual void ScaleHealth()
 		{
 			configuration.SetMaxHealth(currentTowerLevel.maxHealth);
-			
-			if (currentLevel == 0)
-			{
-				configuration.SetHealth(currentTowerLevel.maxHealth);
-			}
-			else
-			{
-				int currentHealth = Mathf.FloorToInt(configuration.normalisedHealth * currentTowerLevel.maxHealth);
-				configuration.SetHealth(currentHealth);
-			}
+            configuration.SetHealth(currentTowerLevel.maxHealth);
 		}
 
 		/// <summary>
