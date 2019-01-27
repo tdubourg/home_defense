@@ -5,14 +5,15 @@ using TowerDefense.UI.HUD;
 using TowerDefense.Towers;
 using TowerDefense.Towers.Placement;
 using Core.Utilities;
-public class TestTowerBuildOnVrClick : DetectVrClick {
 
-	private int count  = 0;
+public class TowerBuildOnVrClick : DetectVrClick {
 
 	private int towerIdx = 0;
 
 	// the "TowerList" thing doesn't have a length property... so we hardcode.
 	private int towerLen = 4; // TowerDefense.Level.LevelManager.instance.towerLibrary.Length;
+
+private int count = 0;
 
 	private GameObject[] towerModels = new GameObject[4];
 
@@ -86,6 +87,7 @@ private void placeTower(IPlacementArea area, IntVector2 pos) {
 }
 
 	override public void Clicked() {
+		Debug.Log("clicked, spawning tower.");
 		IPlacementArea area = GameObject.Find("Grid").GetComponent<IPlacementArea>();
 		IntVector2 pos = new IntVector2(3, 10 + 2*count++);
 		placeTower(area, pos);
