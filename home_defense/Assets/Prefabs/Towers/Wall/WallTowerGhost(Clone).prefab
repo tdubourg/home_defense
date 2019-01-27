@@ -56,7 +56,7 @@ Transform:
   m_LocalRotation: {x: 0.0000000218557, y: -6.5402975e-11, z: -0.000000044359606,
     w: 1}
   m_LocalPosition: {x: 0.36, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.9, z: 2.3}
+  m_LocalScale: {x: 0.3, y: 0.6, z: 2.3}
   m_Children: []
   m_Father: {fileID: 4694634969312298}
   m_RootOrder: 0
