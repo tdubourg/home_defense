@@ -118,7 +118,7 @@ namespace TowerDefense.UI.HUD
 		/// </summary>
 		public void UpgradeButtonClick()
 		{
-			GameUI.instance.UpgradeSelectedTower();
+			GameUI.instance.UpgradeSelectedTower(this);
 		}
 
 		/// <summary>
@@ -126,7 +126,7 @@ namespace TowerDefense.UI.HUD
 		/// </summary>
 		public void SellButtonClick()
 		{
-			GameUI.instance.SellSelectedTower();
+			GameUI.instance.SellSelectedTower(this);
 		}
 
 		/// <summary>
