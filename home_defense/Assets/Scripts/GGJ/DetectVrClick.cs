@@ -21,14 +21,12 @@ public class DetectVrClick : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		ExtraUpdate();
 		if (Input.GetMouseButtonDown(0)) {
 			RaycastHit hit;
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			if(Physics.Raycast (ray, out hit))
 			{
-				if (null != hit.transform) {
-					Debug.Log("Click on " + hit.transform.name);
-				}
 				if (hit.transform == this.transform) {
 					// user clicked us with an actual mouse
 					Clicked();
@@ -39,6 +37,8 @@ public class DetectVrClick : MonoBehaviour {
 
 	// We call this when we detect the user clicked on us.
 	public virtual void Clicked() {}
+
+	public virtual void ExtraUpdate() {}
 
 	public void log(string msg) {
 		LogSingleton.Instance.Log(msg);
