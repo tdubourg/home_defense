@@ -142,10 +142,15 @@ namespace TowerDefense.UI
 			m_State = State.Closed;
 		}
 
-		/// <summary>
-		/// Hide the pause menu on awake
-		/// </summary>
-		protected void Awake()
+        public void ExitTheApp()
+        {
+             Application.Quit();
+        }
+
+        /// <summary>
+        /// Hide the pause menu on awake
+        /// </summary>
+        protected void Awake()
 		{
 			SetPauseMenuCanvas(false);
 			m_State = State.Closed;
