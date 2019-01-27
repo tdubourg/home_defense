@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Oculus/SampleFramework/Usage/OVROverlay.unity
     guid: d31b44aac77e1684d861792b23d46a8b
+  - enabled: 0
+    path: Assets/Oculus/VR/Scenes/GearVrControllerTest.unity
+    guid: d56af3aeb2176e7459f753c1c2e2dd97
   m_configObjects: {}
