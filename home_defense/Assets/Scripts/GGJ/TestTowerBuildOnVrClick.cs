@@ -25,19 +25,19 @@ public class TestTowerBuildOnVrClick : DetectVrClick {
 		towerModels[0] = GameObject.Find("MachineGunTower");
 		towerModels[1] = GameObject.Find("RocketTower");
 		towerModels[2] = GameObject.Find("LaserTower");
-		towerModels[3] = GameObject.Find("LaserTower"); // TODO: wall
+		towerModels[3] = GameObject.Find("WallTower_model");
 	}
 
 	override public void ExtraUpdate() {
 
 		if (OVRInput.Get(OVRInput.Button.Right, OVRInput.Controller.Active) || Input.GetKey("right")) {
 			towerIdx++;
-			log("Next tower type");
+			//log("Next tower type");
 		}
 
 		if (OVRInput.Get(OVRInput.Button.Left, OVRInput.Controller.Active) || Input.GetKey("left")) {
 			towerIdx--;
-			log("Previous tower type");
+			//log("Previous tower type");
 		}
 
 		for (int i=0; i<towerModels.Length; i++) {
@@ -59,7 +59,6 @@ public class TestTowerBuildOnVrClick : DetectVrClick {
 			//log("we hit nothing");
 			return;
 		}
-		log("Hit " + objectHit.collider.name + " at " + objectHit.point);
 		IPlacementArea area = GameObject.Find("Grid").GetComponent<IPlacementArea>();
 		IntVector2 pos = area.WorldToGrid(objectHit.point, new IntVector2(1,1));
 		if (OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.Active)) {
@@ -78,12 +77,10 @@ private void placeTower(IPlacementArea area, IntVector2 pos) {
 	
 	TowerFitStatus fits = area.Fits(pos, controller.dimensions);
 	if (fits != TowerFitStatus.Fits) {
-		log("Doesn't fit");
+		//log("Doesn't fit");
 		return;
 	}
 
-	Debug.Log("Tower data: " + controller + " dimensions: " + controller.dimensions + " configuration:" + controller.configuration + " levels:" + controller.levels);
-	Debug.Log("Level[0]: " + controller.levels[0]);
 	TowerDefense.Towers.Tower createdTower = Instantiate(controller);
 	createdTower.Initialize(area, pos);
 }
