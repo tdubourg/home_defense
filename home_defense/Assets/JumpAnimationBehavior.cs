@@ -65,8 +65,8 @@ public class JumpAnimationBehavior : StateMachineBehaviour {
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Debug.Log("Entering jumping frog animation state");
-            rigidbody = frog.GetComponentInParent<Rigidbody>();
-            originalSpeed = getNavMeshAgent().speed;
+           // rigidbody = frog.GetComponentInParent<Rigidbody>();
+         //   originalSpeed = getNavMeshAgent().speed;
 
         animationStartTime = Time.time;
         Debug.Log("Setting speed to zero at the beginning of the frog jump");
