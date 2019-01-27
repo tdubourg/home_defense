@@ -19,10 +19,10 @@ namespace TowerDefense.Level
 		/// </summary>
 		public List<SpawnInstruction> spawnInstructions;
 
-		/// <summary>
-		/// The index of the current enemy to spawn
-		/// </summary>
-		protected int m_CurrentIndex;
+        /// <summary>
+        /// The index of the current enemy to spawn
+        /// </summary>
+        public int m_CurrentIndex;
 
 		/// <summary>
 		/// The RepeatingTimer used to spawn enemies
