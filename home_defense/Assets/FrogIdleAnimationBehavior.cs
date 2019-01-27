@@ -7,15 +7,36 @@ public class FrogIdleAnimationBehavior : StateMachineBehaviour {
     public GameObject frog;
     float originalSpeed;
     NavMeshAgent navMeshAgent;
+    NavMeshAgent getNavMeshAgent()
+    {
+        if (navMeshAgent == null)
+        {
+            navMeshAgent = frog.GetComponentInParent<NavMeshAgent>();
+
+        }
+        return navMeshAgent;
+    }
+
+    Rigidbody rigidbody;
+    void dontMove()
+    {
+        JumpAnimationBehavior.DontMove(getNavMeshAgent(), rigidbody, frog);
+
+    }
+
+    void moveAgain()
+    {
+        JumpAnimationBehavior.MoveAgain(getNavMeshAgent(), rigidbody, frog);
+    }
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        if (navMeshAgent == null) {
-            navMeshAgent = frog.GetComponentInParent<NavMeshAgent>();
-            originalSpeed = navMeshAgent.speed;
-        }
+        navMeshAgent = frog.GetComponentInParent<NavMeshAgent>();
+        rigidbody = frog.GetComponentInParent<Rigidbody>();
+        originalSpeed = navMeshAgent.speed;
+
         Debug.Log("Entering Idle frog animation state, setting speed to 0");
         //navMeshAgent.speed = 0;
-        navMeshAgent.isStopped = true;
+        dontMove();
 	}
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -23,7 +44,7 @@ public class FrogIdleAnimationBehavior : StateMachineBehaviour {
         // Debug.Log("Speed of meshAgent on idle animation update:" + navMeshAgent.speed.ToString());
         // navMeshAgent.speed = 0;
         Debug.Log("idle frog animation update");
-        navMeshAgent.isStopped = true;
+        dontMove();
 
     }
 
