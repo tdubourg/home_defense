@@ -70,8 +70,8 @@ Transform:
   m_GameObject: {fileID: 1158693742124914}
   m_LocalRotation: {x: 0.0000000218557, y: -6.5402975e-11, z: -0.000000044359606,
     w: 1}
-  m_LocalPosition: {x: 1.238, y: -0.000000023129, z: -0.0016146}
-  m_LocalScale: {x: 1, y: 1, z: 1.4389}
+  m_LocalPosition: {x: 0.36, y: 0, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.9, z: 2.3}
   m_Children: []
   m_Father: {fileID: 4462343325948646}
   m_RootOrder: 1
@@ -84,7 +84,7 @@ Transform:
   m_GameObject: {fileID: 1153366172396398}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.36958963, y: 0.8858656, z: 2.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4584297242550040}
   - {fileID: 4349598065041432}
@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5d8e55681884ffb9fb6ed0b6f18f0bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerGhostPrefab: {fileID: 114967091987212126, guid: b815c8c56e67a46e88dab7c647275cb0,
+  towerGhostPrefab: {fileID: 114061865844062572, guid: 7c2690f6f148f4a1382128b9aa98bf61,
     type: 2}
   buildEffectPrefab: {fileID: 1395313577031670, guid: c559c1920b5d04e6d83aa4464fba5c68,
     type: 2}
