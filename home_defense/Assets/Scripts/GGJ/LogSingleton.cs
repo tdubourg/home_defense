@@ -10,7 +10,12 @@ public class LogSingleton : MonoBehaviour {
   public static LogSingleton Instance { get { return m_Instance; } }
 
 void Start () {
-		Update();
+		if (null==text) {
+				text = GameObject.Find("debug_text").GetComponent<TextMeshPro>();
+		}
+		if (null==m_Instance) {
+			m_Instance = this;
+		}
 	}
 	
 void Awake()
@@ -25,13 +30,9 @@ void Awake()
 
   void Update()
   {
-	if (null==text) {
-			text = GameObject.Find("debug_text").GetComponent<TextMeshPro>();
-	}
-	if (null==m_Instance) {
-		m_Instance = this;
-	}
+		
   }
+
 
   
 
@@ -47,7 +48,8 @@ void Awake()
 			text.SetText(msg);
 		} else {
 			if (null==GameObject.Find("debug_text")) {
-				Debug.Log("no debug_text to write to :(");
+				//Debug.Log("no debug_text to write to :(");
+				return;
 			} else {
 				text = GameObject.Find("debug_text").GetComponent<TextMeshPro>();
 				Debug.Log("debug_text found, but its TextMeshProUGUI component is null: " + (null==text));

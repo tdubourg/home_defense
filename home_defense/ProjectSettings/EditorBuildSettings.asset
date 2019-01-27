@@ -29,10 +29,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Levels/Level1/Level1JP/Level1JP_2.unity
     guid: 74ba69380c27e4366ba25a87ad09f976
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Levels/Level1/Level1JP/Level1JP_3.unity
     guid: e80b978eddda24dc1ac15507caec67c2
   - enabled: 0
     path: Assets/Oculus/SampleFramework/Usage/OVROverlay.unity
     guid: d31b44aac77e1684d861792b23d46a8b
+  - enabled: 0
+    path: Assets/Oculus/VR/Scenes/GearVrControllerTest.unity
+    guid: d56af3aeb2176e7459f753c1c2e2dd97
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level1/Level1JP/Level1JP_4.unity
+    guid: c01cae52db75444d6b6fdb2c7175bdc5
   m_configObjects: {}

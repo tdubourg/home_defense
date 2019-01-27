@@ -48,7 +48,8 @@ namespace TowerDefense.Agents
 
 		protected bool m_IsAttackingRealMember;
 
-        protected Animator m_animator;
+        /* (already defined in the base class)
+		protected Animator m_animator;
         protected Animator getAnimator()
         {
             if (this.m_animator == null)
@@ -59,6 +60,7 @@ namespace TowerDefense.Agents
             return this.m_animator;
 
         }
+		*/
 
         public override void Initialize()
 		{
