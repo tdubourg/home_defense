@@ -24,9 +24,43 @@ namespace TowerDefense.Agents
 		/// <summary>
 		/// Is this agent currently engaging a tower?
 		/// </summary>
-		protected bool m_IsAttacking;
+        protected bool m_IsAttacking
+        {
+            set
+            {
+                var animator = getAnimator();
+                if (animator != null)
+                {
+                    try
+                    {
+                        animator.SetBool("IsMoving", value);
+                    }
+                    catch (System.Exception e) { }
 
-		public override void Initialize()
+                }
+                m_IsAttackingRealMember = value;
+            }
+            get
+            {
+                return m_IsAttackingRealMember;
+            }
+        }
+
+		protected bool m_IsAttackingRealMember;
+
+        protected Animator m_animator;
+        protected Animator getAnimator()
+        {
+            if (this.m_animator == null)
+            {
+                this.m_animator = GetComponent<Animator>();
+
+            }
+            return this.m_animator;
+
+        }
+
+        public override void Initialize()
 		{
 			base.Initialize();
 			
@@ -111,7 +145,7 @@ namespace TowerDefense.Agents
 		/// <summary>
 		/// Change to <see cref="Agent.State.OnCompletePath" /> when path is no longer blocked or to
 		/// <see cref="Agent.State.Attacking" /> when the agent reaches <see cref="AttackingAgent.m_TargetTower" />
-		/// </summary>
+		/// </summary>  
 		protected override void OnPartialPathUpdate()
 		{
 			if (!isPathBlocked)
