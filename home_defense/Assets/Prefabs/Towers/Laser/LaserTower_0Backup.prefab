@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4123545054233330}
   - component: {fileID: 114381954249791234}
   m_Layer: 10
-  m_Name: LaserTower_0
+  m_Name: LaserTower_0Backup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
