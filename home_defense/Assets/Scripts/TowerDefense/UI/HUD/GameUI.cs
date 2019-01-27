@@ -195,6 +195,7 @@ namespace TowerDefense.UI.HUD
 		/// </summary>
 		public void CancelGhostPlacement()
 		{
+            Debug.Log("Cancelling ghost");
 			if (!isBuilding)
 			{
 				throw new InvalidOperationException("Can't cancel out of ghost placement when not in the building state.");
@@ -248,6 +249,7 @@ namespace TowerDefense.UI.HUD
 		/// <exception cref="ArgumentOutOfRangeException">thrown on an invalid state</exception>
 		void SetState(State newState)
 		{
+            Debug.Log("GameUI is setting state to " + newState.ToString());
 			if (state == newState)
 			{
 				return;
@@ -326,6 +328,7 @@ namespace TowerDefense.UI.HUD
 			
 			if (m_CurrentTower != null)
 			{
+                Debug.Log("Cancelling ghost from settodragmode");
 				// Destroy current ghost
 				CancelGhostPlacement();
 			}
@@ -351,7 +354,8 @@ namespace TowerDefense.UI.HUD
 			
 			if (m_CurrentTower != null)
 			{
-				// Destroy current ghost
+                // Destroy current ghost
+                Debug.Log("Canceling ghost from settobuildmode");
 				CancelGhostPlacement();
 			}
 			SetUpGhostTower(towerToBuild);
@@ -522,7 +526,7 @@ namespace TowerDefense.UI.HUD
 			bool successfulPurchase = LevelManager.instance.currency.TryPurchase(cost);
 			if (successfulPurchase)
 			{
-				PlaceTower();
+                PlaceTower();
 			}
 		}
 
@@ -546,6 +550,7 @@ namespace TowerDefense.UI.HUD
 			PlacementAreaRaycast(ref pointer);
 			if (!pointer.raycast.HasValue || pointer.raycast.Value.collider == null)
 			{
+                Debug.Log("Cancel ghost from buytower");
 				CancelGhostPlacement();
 				return;
 			}
@@ -641,6 +646,7 @@ namespace TowerDefense.UI.HUD
 		/// </exception>
 		public void PlaceTower()
 		{
+            Debug.Log("PLacing tower");
 			if ( !isBuilding )
 			{
 				throw new InvalidOperationException("Trying to place tower when not in a Build Mode");
@@ -655,9 +661,11 @@ namespace TowerDefense.UI.HUD
 			}
 			Tower createdTower = Instantiate(m_CurrentTower.controller);
 			createdTower.Initialize(m_CurrentArea, m_GridPosition);
+            Debug.Log("NOT CANCELING the ghost");
+            //CancelGhostPlacement();
+            ReturnToBuildMode();
 
-			CancelGhostPlacement();
-		}
+        }
 
 		/// <summary>
 		/// Calculates whether the given pointer is over the current tower ghost
@@ -950,8 +958,8 @@ namespace TowerDefense.UI.HUD
 
 					Tower createdTower = Instantiate(controller);
 					createdTower.Initialize(m_CurrentArea, m_GridPosition);
-
-					CancelGhostPlacement();
+                    //Debug.Log("Cancel ghost from placeghost");
+					//CancelGhostPlacement();
 				}
 			}
 		}
