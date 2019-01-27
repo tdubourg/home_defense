@@ -15,6 +15,6 @@ MonoBehaviour:
   upgradeDescription: A stronger wall
   cost: 5
   sell: 2
-  maxHealth: 100
-  startingHealth: 100
+  maxHealth: 50
+  startingHealth: 50
   icon: {fileID: 21300000, guid: 0b4484afb86084084bc9c043c05e1afe, type: 3}
