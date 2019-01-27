@@ -134,10 +134,10 @@ namespace TowerDefense.Level
         {
             for (int i = 0; i < waveEnemies; i++)
             {
-                float delay = 3f - i * 0.1f;
+                float delay = 3f - i * 0.05f;
                 if(delay < 0.3f)
                 {
-                    delay = 0.3f;
+                    delay = 0.25f;
                 }
                 list.Add(CreateSpawn(delay));
             }
