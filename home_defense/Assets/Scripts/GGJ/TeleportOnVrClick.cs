@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TeleportOnVrClick : DetectVrClick {
 
-   public float speed = 33f;
+   public bool special_height = false;
 
    private bool spinning = false;
 
@@ -17,6 +17,12 @@ public class TeleportOnVrClick : DetectVrClick {
 		GameObject camera = GameObject.Find("OVRCameraRig");
 		camera.transform.SetPositionAndRotation(this.gameObject.transform.position, this.gameObject.transform.rotation);
 		camera.transform.Translate(new Vector3(0.0F,0.0F,2.0F));
+		if (special_height) {
+			log("easter egg");
+			Vector3 pos = camera.transform.position;
+			pos.y = 7;
+			camera.transform.SetPositionAndRotation(pos, camera.transform.rotation);
+		}
 	}
 	
 }

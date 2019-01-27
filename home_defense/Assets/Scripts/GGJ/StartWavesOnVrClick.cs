@@ -11,9 +11,12 @@ public class StartWavesOnVrClick : DetectVrClick {
 
 	override public void Clicked() {
 		if (TowerDefense.Level.LevelManager.instanceExists)
-				{
-					TowerDefense.Level.LevelManager.instance.BuildingCompleted();
-				}
+		{
+			TowerDefense.Level.LevelManager.instance.BuildingCompleted();
+			// The start button disappears, having achieved its goal in life.
+			this.transform.gameObject.SetActive(false);
+
+		}
 	}
 
 }
