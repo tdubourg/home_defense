@@ -11,7 +11,10 @@ public class LogSingleton : MonoBehaviour {
 
 void Start () {
 		if (null==text) {
-				text = GameObject.Find("debug_text").GetComponent<TextMeshPro>();
+			GameObject debugText = GameObject.Find("debug_text");
+			if (debugText) {
+				text = debugText.GetComponent<TextMeshPro>();
+			}
 		}
 		if (null==m_Instance) {
 			m_Instance = this;

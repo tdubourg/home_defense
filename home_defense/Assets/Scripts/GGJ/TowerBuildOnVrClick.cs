@@ -23,9 +23,9 @@ private int count = 0;
 	}
 
 	private void UpdateTowerModels() {
-		towerModels[0] = GameObject.Find("MachineGunTower");
-		towerModels[1] = GameObject.Find("RocketTower");
-		towerModels[2] = GameObject.Find("LaserTower");
+		towerModels[0] = GameObject.Find("MachineGunTower_model");
+		towerModels[1] = GameObject.Find("RocketTower_model");
+		towerModels[2] = GameObject.Find("LaserTower_model");
 		towerModels[3] = GameObject.Find("WallTower_model");
 	}
 
