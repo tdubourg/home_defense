@@ -17,7 +17,7 @@ private bool spinning = false;
 		if (Input.GetMouseButtonDown (0)) {
          RaycastHit hit;
          Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-         if(Physics.Raycast (ray, out hit))
+         if (Physics.Raycast(ray, out hit))
          {
 			 if (null != hit.transform) {
 				 Debug.Log("Click on " + hit.transform.name);

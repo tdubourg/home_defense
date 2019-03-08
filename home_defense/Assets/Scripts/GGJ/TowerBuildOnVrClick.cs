@@ -5,6 +5,7 @@ using TowerDefense.UI.HUD;
 using TowerDefense.Towers;
 using TowerDefense.Towers.Placement;
 using Core.Utilities;
+using TowerDefense.Level;
 
 public class TowerBuildOnVrClick : DetectVrClick {
 
@@ -80,6 +81,13 @@ private void placeTower(IPlacementArea area, IntVector2 pos) {
 	if (fits != TowerFitStatus.Fits) {
 		//log("Doesn't fit");
 		return;
+	}
+
+	if (!LevelManager.instance.currency.TryPurchase(controller.purchaseCost)) {
+		log("Not enough money");
+		return;
+	} else {
+		//log("buying. " + (LevelManager.instance.currency.currentCurrency) + " left");
 	}
 
 	TowerDefense.Towers.Tower createdTower = Instantiate(controller);
